@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+import math
 
 def minOperations(n):
     if n == 1:
