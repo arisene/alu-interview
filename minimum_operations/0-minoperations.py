@@ -1,11 +1,11 @@
 #!/usr/bin/python3
+
 import math
 
 def minOperations(n):
-    if n == 1:
-        return 0  # Already have 1 H character, no operations needed
-    if n < 1:
-        return 0  # Invalid input, impossible to achieve
+    
+    if n <= 1:
+        return 0
     
     operations = 0
 
