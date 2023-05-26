@@ -22,8 +22,3 @@ def minOperations(n):
     
     return operations
 
-# Example usage:
-#n = 9
-#result = minOperations(n)
-#print("Number of operations:", result)
-
