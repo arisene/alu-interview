@@ -7,16 +7,17 @@ def minOperations(n):
     if n < 1:
         return 0  # Invalid input, impossible to achieve
     
-    operations = [float('inf')] * (n + 1)  # Initialize the operations list with infinity
-    operations[1] = 0  # Base case
+    operations = 0
+
+    for i in range(2, int(math.sqrt(abs(n))) + 1):
+        while n % i == 0:
+            operations += i
+            n //= i
+
+    if n > 1:
+        operations += n
     
-    for i in range(2, n + 1):
-        for j in range(1, i):
-            if i % j == 0:
-                # If j is a divisor of i, it means we can copy j characters and paste i//j times to get i characters
-                operations[i] = min(operations[i], operations[j] + i // j)
-    
-    return operations[n]  # Return the minimum number of operations for n
+    return operations
 
 # Example usage:
 #n = 9
